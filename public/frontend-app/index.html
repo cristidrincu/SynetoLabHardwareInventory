@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Syneto Labs App</title>
+    <link rel="stylesheet" type="text/css" href="vendors/bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+    <link rel="stylesheet" type="text/css" href="vendors/bower_components/angular-bootstrap/ui-bootstrap-csp.css"/>
+    <link rel="stylesheet" type="text/css" href="vendors/bower_components/animate/animate.css"/>
+</head>
+<body ng-app="SynetoLabsApp">
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <img src="images/syneto-logo-resized.png" style="width: 100px; height: 25px;" alt="Syneto: Your data, our storage"/>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li ui-sref-active="active"><a ui-sref="allHardwareInventory.hardwareInventoryHome">View Hardware Inventory</a></li>
+                <li ui-sref-active="active"><a ui-sref="allHardwareInventory.addNewHardware">Add new hardware</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div ui-view></div>
+
+<!--Vendor related JavaScript libraries-->
+<script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="vendors/bower_components/angular/angular.js"></script>
+<script src="vendors/bower_components/ui-router/release/angular-ui-router.min.js"></script>
+<script src="vendors/bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+<script src="vendors/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script src="vendors/bower_components/moment/min/moment-with-locales.min.js"></script>
+<script src="vendors/bower_components/ngstorage/ngStorage.min.js"></script>
+<!--<script src="vendors/bower_components/moment/locale/ro.js"></script>-->
+<script src="vendors/bower_components/angular-moment/angular-moment.js"></script>
+
+<!--App related controllers, services and directives-->
+<script src="scripts/app.js"></script>
+<script src="scripts/controllers/home.js"></script>
+<script src="scripts/controllers/add-new-hardware.js"></script>
+<script src="scripts/controllers/hardware-details.js"></script>
+<script src="scripts/controllers/delete-hardware.js"></script>
+
+<!--Services-->
+<script src="scripts/services/HardwareService.js"></script>
+<script src="scripts/services/AlertService.js"></script>
+
+<!--Directives-->
+<script src="scripts/directives/snapshot-current-hardware.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<div class="modal-header">
+    <h3 class="modal-title">Stergere element hardware</h3>
+</div>
+<div class="modal-body">
+    <div class="form-group">
+        <p>Esti sigur ca vrei sa stergi acest hardware cu urmatoarele proprietati?</p>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+            <li ng-repeat="hardware in hardwareData">
+                <h2>Name: {{ ::hardware.name }}</h2>
+                <p><strong>Hostname: {{ ::hardware.hostname }}</strong></p>
+                <p><strong>Location: {{ ::hardware.location }}</strong></p>
+                <p><strong>Serial #: {{ ::hardware.serialNumber }}</strong></p>
+                <p><strong>Physical Dimension: {{ ::hardware.physicalDimension }}</strong></p>
+                <p><strong>CPU: {{ ::hardware.cpu }}</strong></p>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-danger" ng-click="ok()"><span class="glyphicon glyphicon-alert"></span> Yupp, sunt sigur!</button>
+    <button class="btn btn-success" ng-click="cancel()"><span class="glyphicon glyphicon-share"></span> Nope, vreau inapoi!</button>
+</div>

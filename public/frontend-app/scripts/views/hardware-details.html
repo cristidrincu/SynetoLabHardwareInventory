@@ -1,0 +1,62 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12">
+            <alert ng-repeat="alert in alerts" type="{{ alert.type }}">{{alert.msg}}</alert>
+            <div ng-repeat="hardware in hardwareDetails">
+                    <button class="btn btn-info separator" ng-if="!editEnabled" ng-click="updateHardwareDetails()"><span class="glyphicon glyphicon-wrench"></span> Update Hardware Details</button>
+                    <button class="btn btn-danger separator" ng-if="!editEnabled" ng-click="deleteHardware(hardware._id)"><span class="glyphicon glyphicon-trash"></span> Delete hardware</button>
+                <div class="col-xs-1">
+                    <span ng-if="isPrevEnabled() && !editEnabled" ng-click="gotoPrevHardware()" class="glyphicon glyphicon-chevron-left"></span>
+                </div>
+                <div class="col-xs-3 animated fadeInLeft">
+                    <h3 style="font-size: 16px;">{{ ::hardware.name }}: {{ ::hardware.location }}</h3>
+                    <img class="hardware-image-small" src="images/example-image-small.png" alt="Temp image"/>
+                </div>
+
+                <div ng-include="'scripts/views/partials/update-hardware-details-partial.html'"></div>
+
+                <div ng-if="!editEnabled">
+                    <div class="col-xs-3 animated fadeIn">
+                        <ul class="details-hardware-list">
+                            <li>Name: {{ ::hardware.name }}</li>
+                            <li>Hostname: {{ ::hardware.hostname }}</li>
+                            <li>Location: {{ ::hardware.location }}</li>
+                            <li>Serial Number: {{ ::hardware.serialNumber }}</li>
+                            <li>Physical dimension: {{ ::hardware.physicalDimension }}</li>
+                            <li>CPU: {{ ::hardware.cpu }}</li>
+                            <li>Memory: {{ ::hardware.memory }}</li>
+                            <li>Disk drives: {{ ::hardware.diskDrives }}</li>
+                            <li>SSD Capacity in GB: {{ ::hardware.ssdCapacityGB }}</li>
+                            <li>Storage Capacity in TB: {{ ::hardware.storageCapacityTB }}</li>
+                            <li>JBOD Connections: {{ ::hardware.jbodConnections }}</li>
+                            <li>10/100 Mbps Ports Cards: {{ ::hardware.mbpsPortsCards10100 }}</li>
+                            <li>1 Gbps Net Ports/Cards: {{ ::hardware.netPortCards1Gbbps }}</li>
+                            <li>10Gbps Net Ports/Cards: {{ ::hardware.netPortCards10Gbps }}</li>
+                            <li>FC Ports Cards: {{ ::hardware.fcPortCards }}</li>
+                            <li>Management IP: {{ ::hardware.managementIp }}</li>
+                            <li>IPMI IP: {{ ::hardware.ipmiIp }}</li>
+                            <li>OS: {{ ::hardware.os }}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xs-3 animated fadeInDown">
+                    <h3>Note aditionale</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus hendrerit magna vitae libero aliquam vulputate. Proin sit amet cursus purus, vitae ornare quam.
+                    </p>
+
+                    <p>
+                        Nulla vitae fermentum sapien. Duis cursus, odio placerat semper dapibus, est sapien imperdiet enim, in porta eros tellus ac magna. Mauris sed nunc augue. Mauris ultrices varius nulla.
+                        <br/>
+                        Vivamus ut purus vitae erat convallis varius. Phasellus nec diam ac augue porta commodo. Sed pulvinar sit amet nisi non cursus.
+                        <br/>
+                        Vestibulum pellentesque posuere tincidunt. Fusce non arcu a nulla vehicula eleifend ac eget eros. Nunc auctor quam dolor, vitae semper leo sollicitudin non.
+                    </p>
+                </div>
+                <div class="col-xs-1" style="float: right">
+                    <span ng-if="isNextEnabled() && !editEnabled" ng-click="gotoNextHardware()" class="glyphicon glyphicon-chevron-right"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

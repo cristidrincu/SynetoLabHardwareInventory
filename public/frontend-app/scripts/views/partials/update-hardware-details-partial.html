@@ -1,0 +1,106 @@
+<div class="col-xs-5 animated fadeIn" ng-if="editEnabled">
+    <form novalidate name="editHardwareDetails" class="form-horizontal">
+        <div class="col-xs-5" style="margin-right: 10px;">
+            <div class="form-group">
+                <label for="hardwareName" class="control-label"><span>Hardware name</span>*</label>
+                <input type="text" class="form-control" id="hardwareName" ng-model="hardware.name" name="hardwareName" required value="{{ hardware.name }}">
+            </div>
+
+            <div class="form-group">
+                <label for="hardwareHostName" class="control-label"><span>Hardware name</span>*</label>
+                <input type="text" class="form-control" id="hardwareHostName" ng-model="hardware.hostname" name="hardwareHostName" required value="{{ hardware.hostname }}">
+            </div>
+
+            <div class="form-group">
+                <label for="hardwareLocation" class="control-label"><span>Hardware location</span>*</label>
+                <input type="text" class="form-control" id="hardwareLocation" ng-model="hardware.location" name="hardwareLocation" required value="{{ hardware.location }}">
+            </div>
+
+            <div class="form-group">
+                <label for="hardwareSerialNumber" class="control-label"><span>Hardware serial number</span>*</label>
+                <input type="text" class="form-control" id="hardwareSerialNumber" ng-model="hardware.serialNumber" name="hardwareSerialNumber" required value="{{ hardware.serialNumber }}">
+            </div>
+
+            <div class="form-group">
+                <label for="hardwarePhysicalDimension" class="control-label"><span>Physical Dimensions</span>*</label>
+                <input type="text" class="form-control" id="hardwarePhysicalDimension" ng-model="hardware.physicalDimension" name="hardwarePhysicalDimension" required value="{{ hardware.physicalDimension }}">
+            </div>
+
+            <div class="form-group">
+                <label for="hardwareCpu" class="control-label"><span>CPU</span>*</label>
+                <input type="text" class="form-control" id="hardwareCpu" ng-model="hardware.cpu" name="hardwareCpu" required value="{{ hardware.cpu }}">
+            </div>
+
+            <div class="form-group">
+                <label for="hardwareMemory" class="control-label"><span>Memory</span>*</label>
+                <input type="text" class="form-control" id="hardwareMemory" ng-model="hardware.memory" name="hardwareMemory" required value="{{ hardware.memory }}">
+            </div>
+
+            <div class="form-group">
+                <label for="hardwareDiskDrives" class="control-label"><span>Disk Drives</span>*</label>
+                <input type="text" class="form-control" id="hardwareDiskDrives" ng-model="hardware.diskDrives" name="hardwareDiskDrives" required value="{{ hardware.diskDrives }}">
+            </div>
+
+            <div class="form-group">
+                <label for="hardwareSsdCapacityGB" class="control-label"><span>SSD Capacity in GB</span>*</label>
+                <input type="text" class="form-control" id="hardwareSsdCapacityGB" ng-model="hardware.ssdCapacityGB" name="hardwareSsdCapacityGB" required value="{{ hardware.ssdCapacityGB }}">
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="form-group">
+                <label for="hardwareStorageCapacityTB" class="control-label"><span>Storage Capacity in TB</span>*</label>
+                <input type="text" class="form-control" id="hardwareStorageCapacityTB" ng-model="hardware.storageCapacityTB" name="hardwareStorageCapacityTB" required value="{{ hardware.storageCapacityTB }}">
+            </div>
+
+            <div class="form-group">
+                <label for="hardwareJbodConnections" class="control-label"><span>JBOD Connections</span>*</label>
+                <input type="text" class="form-control" id="hardwareJbodConnections" ng-model="hardware.jbodConnections" name="hardwareJbodConnections" required value="{{ hardware.jbodConnections }}">
+            </div>
+
+            <div class="form-group">
+                <label for="hardwareMbpsPortsCards10100" class="control-label"><span>10/100 Mbps Ports Cards</span>*</label>
+                <input type="text" class="form-control" id="hardwareMbpsPortsCards10100" ng-model="hardware.mbpsPortsCards10100" name="hardwareMbpsPortsCards10100" required value="{{ hardware.mbpsPortsCards10100 }}">
+            </div>
+
+            <div class="form-group">
+                <label for="hardwareNetPortCards1Gbbps" class="control-label"><span>1 Gbps Net Ports/Cards</span>*</label>
+                <input type="text" class="form-control" id="hardwareNetPortCards1Gbbps" ng-model="hardware.netPortCards1Gbbps" name="hardwareNetPortCards1Gbbps" required value="{{ hardware.netPortCards1Gbbps }}">
+            </div>
+
+            <div class="form-group">
+                <label for="hardwareNetPortCards10Gbps" class="control-label"><span>10Gbps Net Ports/Cards</span>*</label>
+                <input type="text" class="form-control" id="hardwareNetPortCards10Gbps" ng-model="hardware.netPortCards10Gbps" name="hardwareNetPortCards10Gbps" required value="{{ hardware.netPortCards10Gbps }}">
+            </div>
+
+            <div class="form-group">
+                <label for="hardwareFcPortCards" class="control-label"><span>FC Ports Cards</span>*</label>
+                <input type="text" class="form-control" id="hardwareFcPortCards" ng-model="hardware.fcPortCards" name="hardwareFcPortCards" required value="{{ hardware.fcPortCards }}">
+            </div>
+
+            <div class="form-group">
+                <label for="hardwareManagementIp" class="control-label"><span>Management IP</span>*</label>
+                <input type="text" class="form-control" id="hardwareManagementIp" ng-model="hardware.managementIp" name="hardwareManagementIp" required value="{{ hardware.managementIp }}">
+            </div>
+
+            <div class="form-group">
+                <label for="hardwareIpmiIp" class="control-label"><span>IPMI IP</span>*</label>
+                <input type="text" class="form-control" id="hardwareIpmiIp" ng-model="hardware.ipmiIp" name="hardwareIpmiIp" required value="{{ hardware.ipmiIp }}">
+            </div>
+
+            <div class="form-group">
+                <label for="hardwareOs" class="control-label"><span>IPMI IP</span>*</label>
+                <input type="text" class="form-control" id="hardwareOs" ng-model="hardware.os" name="hardwareOs" required value="{{ hardware.os }}">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-success" ng-click="update(hardware._id, hardware)">
+                <span class="cc-btn-icon cc-save-icon"></span>
+                <span>Update Hardware Element</span>
+            </button>
+            <button class="btn btn-danger" ng-click="cancel()">
+                <span>Cancel</span>
+            </button>
+        </div>
+    </form>
+</div>

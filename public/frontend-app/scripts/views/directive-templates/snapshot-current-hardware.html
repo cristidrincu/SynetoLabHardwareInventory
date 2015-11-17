@@ -1,0 +1,46 @@
+<div id="containerSnapshotHardware" class="container-fluid" style="padding-top: 40px;">
+    <div class="row">
+        <div class="col-xs-12" ng-if="hardwares.length == 0">
+            <h3 style="margin-bottom: 40px;">Snapshot of <span class="label label-success">current hardware</span></h3>
+            <p class="alert-info" style="padding: 10px 10px">Momentan nu exista hardware in inventar!</p>
+        </div>
+        <div class="col-xs-12" ng-if="hardwares.length > 0">
+            <h3 style="margin-bottom: 40px; float: left">Snapshot of <span class="label label-success">current hardware</span></h3>
+            <p style="float: left; position: relative; top: 25px; left: 10px;">{{ messageFromDirective }}</p>
+            <span style="float: right;" ng-click="closeSnapshot()" class="closeSnapshotBtn glyphicon glyphicon-remove-sign"></span>
+            <br class="clearFloats"/>
+            <form>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div>
+                        <input type="text" class="form-control" placeholder="Cauta dupa hardware" ng-model="searchHardwareName">
+                    </div>
+                </div>
+            </form>
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Hostname</th>
+                    <th>Location</th>
+                    <th>Serial #</th>
+                    <th>Dimension</th>
+                    <th>View details</th>
+                    <th>Delete hardware</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="tableRowDetails" ng-repeat="hardware in hardwares | orderBy : 'name' | filter: searchHardwareName">
+                    <td>{{ ::hardware.name }}</td>
+                    <td>{{ ::hardware.hostname }}</td>
+                    <td>{{ ::hardware.location }}</td>
+                    <td>{{ ::hardware.serialNumber }}</td>
+                    <td>{{ ::hardware.physicalDimension }}</td>
+                    <td><a ui-sref="allHardwareInventory.hardwareDetails({id: hardware._id})"><span class="glyphicon glyphicon-eye-open"></span></a></td>
+                    <td><button class="btn btn-default" ng-click="deleteHardware(hardware._id)"><span class="glyphicon glyphicon-trash"></span></button></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

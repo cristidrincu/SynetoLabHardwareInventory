@@ -1,0 +1,61 @@
+<div class="container-fluid">
+    <alert ng-repeat="alert in alerts" type="{{ alert.type }}">{{alert.msg}}</alert>
+    <h3 style="margin-bottom: 40px;">A <span class="label label-success">Snapshot</span> of available hardware</h3>
+    <div class="row">
+        <div class="col-xs-12" ng-if="hardwares.length == 0">
+            <p class="alert-info" style="padding: 10px 10px">Momentan nu exista hardware in inventar!</p>
+        </div>
+        <div class="col-xs-12 animated fadeInUp" ng-if="hardwares.length > 0">
+            <form>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div>
+                        <input type="text" class="form-control" placeholder="Cauta dupa hardware" ng-model="searchHardwareName">
+                    </div>
+                </div>
+            </form>
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>Hardware Image</th>
+                    <th>Name</th>
+                    <th>Hostname</th>
+                    <th>Location</th>
+                    <th>Serial #</th>
+                    <th>Physical Dimension</th>
+                    <th>CPU</th>
+                    <th>Memory</th>
+                    <th>Disk Drives</th>
+                    <th>SSD Cap. (GB)</th>
+                    <th>Storage Cap. (TB)</th>
+                    <th>JBOD Connections</th>
+                    <th>View details</th>
+                    <th>Delete hardware</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="hardware in hardwares | orderBy : 'name' | filter: searchHardwareName">
+                    <td><a ui-sref="allHardwareInventory.hardwareDetails({id: hardware._id})"><img style="border-radius:100px; width: 120px; height: 120px;" src="images/example-image-small.png" alt="Temporary image"/></a></td>
+                    <td>{{ ::hardware.name }}</td>
+                    <td>{{ ::hardware.hostname }}</td>
+                    <td>{{ ::hardware.location }}</td>
+                    <td>{{ ::hardware.serialNumber }}</td>
+                    <td>{{ ::hardware.physicalDimension }}</td>
+                    <td>{{ ::hardware.cpu }}</td>
+                    <td>{{ ::hardware.memory }}</td>
+                    <td>{{ ::hardware.diskDrives }}</td>
+                    <td>{{ ::hardware.ssdCapacityGB }}</td>
+                    <td>{{ ::hardware.storageCapacityTB }}</td>
+                    <td>{{ ::hardware.jbodConnections }}</td>
+                    <td><a ui-sref="allHardwareInventory.hardwareDetails({id: hardware._id})"><span
+                            class="glyphicon glyphicon-eye-open"></span></a></td>
+                    <td>
+                        <button class="btn btn-default" ng-click="deleteHardware(hardware._id)"><span
+                                class="glyphicon glyphicon-trash"></span></button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

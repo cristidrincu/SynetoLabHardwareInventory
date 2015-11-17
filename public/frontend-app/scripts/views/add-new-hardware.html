@@ -1,0 +1,136 @@
+<div class="container-fluid">
+    <h3 style="margin-bottom: 40px; float:left;">All fields are <span class="label label-info">required</span></h3>
+    <alert ng-repeat="alert in alerts" type="{{ alert.type }}">{{alert.msg}}</alert>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="col-xs-2 animated fadeInLeft">
+                <div class="container-advice-completing-fields-cards">
+                    <h4>Advice on completing the fields</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id auctor felis. Sed maximus erat commodo nisi lacinia egestas.
+                        <br/><br/>
+                        Aenean feugiat libero justo, quis porttitor lectus rutrum eget. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                        <br/><br/>
+                        Aenean sodales metus velit, id hendrerit sem mattis non. Nullam pretium finibus lectus, vel ultricies nulla ornare ut.
+                    </p>
+                </div>
+                <div class="container-advice-completing-fields-cards">
+                    <h4>Current Hardware Snapshot</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id auctor felis. Sed maximus erat commodo nisi lacinia egestas.
+                        <br/>
+                    </p>
+                    <div class="container-btn-current-snapshot">
+                        <button ng-click="triggerSnapshotHardware()" class="btn btn-info"><span class="glyphicon glyphicon-eye-open open-snapshot"></span> Show current hardware snapshot</button>
+                    </div>
+                </div>
+            </div>
+            <form novalidate name="addHardwareForm" class="form-horizontal">
+                <div class="col-xs-3 animated fadeInDown" style="border-radius:5px; background-color: #f3f3f3; box-shadow: 2px 2px 5px #888888;">
+                    <div class="form-group padded-form-group">
+                        <label for="name"><span>Hardware Name</span><span>*</span></label>
+                        <input type="text" class="form-control" id="name" ng-model="formData.name" name="name" required />
+                    </div>
+
+                    <div class="form-group padded-form-group">
+                        <label for="hostname"><span>Hostname</span></label>
+                        <input type="text" class="form-control" id="hostname" ng-model="formData.hostname" name="hostname" />
+                    </div>
+
+                    <div class="form-group padded-form-group">
+                        <label for="hardwareLocation"><span>Location</span><span>*</span></label>
+                        <input type="text" class="form-control" id="hardwareLocation" ng-model="formData.location" name="hardwareLocation" required />
+                    </div>
+
+                    <div class="form-group padded-form-group">
+                        <label for="serialNumber"><span>Serial Number</span><span>*</span></label>
+                        <input type="text" class="form-control" id="serialNumber" ng-model="formData.serialNumber" name="serialNumber" required />
+                    </div>
+
+                    <div class="form-group padded-form-group">
+                        <label for="physicalDimension"><span>Dimensions</span><span>*</span></label>
+                        <input type="text" class="form-control" id="physicalDimension" ng-model="formData.physicalDimension" name="physicalDimension" required />
+                    </div>
+
+                    <div class="form-group padded-form-group">
+                        <label for="cpu"><span>CPU</span><span>*</span></label>
+                        <input type="text" class="form-control" id="cpu" ng-model="formData.cpu" name="cpu" required />
+                    </div>
+                </div>
+                <div class="col-xs-3 animated fadeInDown" style="border-radius:5px; background-color: #f3f3f3; box-shadow: 2px 2px 5px #888888; margin-left: 20px;">
+                    <div class="form-group padded-form-group">
+                        <label for="memory"><span>Memory</span><span>*</span></label>
+                        <input type="text" class="form-control" id="memory" ng-model="formData.memory" name="memory" required />
+                    </div>
+                    <div class="form-group padded-form-group">
+                        <label for="diskDrives"><span>Disk Drives</span></label>
+                        <input type="text" class="form-control" id="diskDrives" ng-model="formData.diskDrives" name="diskDrives" required />
+                    </div>
+
+                    <div class="form-group padded-form-group">
+                        <label for="ssdCapacityGB"><span>SSD Capacity</span><span>*</span></label>
+                        <input type="text" class="form-control" id="ssdCapacityGB" ng-model="formData.ssdCapacityGB" name="ssdCapacityGB" required />
+                    </div>
+
+                    <div class="form-group padded-form-group">
+                        <label for="storageCapacityTB"><span>Storage Capacity</span><span>*</span></label>
+                        <input type="text" class="form-control" id="storageCapacityTB" ng-model="formData.storageCapacityTB" name="storageCapacityTB" required >
+                    </div>
+
+                    <div class="form-group padded-form-group">
+                        <label for="jbodConnections"><span>JBOD Connections</span><span>*</span></label>
+                        <input type="text" class="form-control" id="jbodConnections" ng-model="formData.jbodConnections" name="jbodConnections" required />
+                    </div>
+
+
+                    <div class="form-group padded-form-group">
+                        <label for="mbpsPortsCards10100"><span>Port Cards 10/100 Mbps</span></label>
+                        <input type="text" class="form-control " id="mbpsPortsCards10100" ng-model="formData.mbpsPortsCards10100" required/>
+                    </div>
+                </div>
+                <div class="col-xs-3 animated fadeInDown" style="border-radius:5px; background-color: #f3f3f3; box-shadow: 2px 2px 5px #888888; margin-left: 20px;">
+                    <div class="form-group padded-form-group">
+                        <label for="netPortCards1Gbbps"><span>1 Gbps Net Ports/Cards</span><span>*</span></label>
+                        <input type="text" class="form-control" id="netPortCards1Gbbps" ng-model="formData.netPortCards1Gbbps" name="netPortCards1Gbbps" required />
+                    </div>
+
+                    <div class="form-group padded-form-group">
+                        <label for="netPortCards10Gbps"><span>10Gbps Net Ports/Cards</span><span>*</span></label>
+                        <input type="text" class="form-control" id="netPortCards10Gbps" ng-model="formData.netPortCards10Gbps" name="netPortCards10Gbps" required />
+                    </div>
+
+                    <div class="form-group padded-form-group">
+                        <label for="fcPortCards"><span>FC Ports Cards</span><span>*</span></label>
+                        <input type="text" class="form-control" id="fcPortCards" ng-model="formData.fcPortCards" name="fcPortCards" required />
+                    </div>
+
+                    <div class="form-group padded-form-group">
+                        <label for="managementIp"><span>Management IP</span><span>*</span></label>
+                        <input type="text" class="form-control" id="managementIp" ng-model="formData.managementIp" name="managementIp" required />
+                    </div>
+
+                    <div class="form-group padded-form-group">
+                        <label for="ipmiIp"><span>IPMI IP</span><span>*</span></label>
+                        <input type="text" class="form-control" id="ipmiIp" ng-model="formData.ipmiIp" name="ipmiIp" required />
+                    </div>
+
+                    <div class="form-group padded-form-group">
+                        <label for="os"><span>OS</span><span>*</span></label>
+                        <input type="text" class="form-control" id="os" ng-model="formData.os" name="os" required />
+                    </div>
+
+                    <div class="form-group padded-form-group">
+                        <button class="btn btn-success" ng-click="save()">
+                            <span class="cc-btn-icon cc-save-icon"></span>
+                            <span>Create New Hardware Element</span>
+                        </button>
+                        <button class="btn btn-danger" ng-click="cancel()">
+                            <span>Cancel</span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<snapshot-current-hardware></snapshot-current-hardware>
