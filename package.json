@@ -20,7 +20,7 @@
         "passport-google-oauth": "~0.1.5",
         "connect-flash": "~0.1.1",
         "bcrypt-nodejs": "latest",
-        "moment": "2.8.1",
+        "moment": "2.11.2",
         "underscore": "1.7.0",
         "q": "1.0.1",
         "chai": "1.9.2",
